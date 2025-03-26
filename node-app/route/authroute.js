@@ -17,7 +17,7 @@ router.post('/register', async (req, res) => {
                 email,
                 password: hashed,
             })
-            res.status(200).send({message: "User added successfully"})
+            res.status(201).send({message: "User added successfully"})
         }
     } catch(error) {
         console.log(error);
