@@ -11,7 +11,7 @@ router.post('/register', async (req, res) => {
         if (userfind.length != 0) {
             res.status(401).send({message: "User already exits this email or username"})
         } else {
-            const hashed = await bcrypt.hash(password, 10)
+            const hashed = bcrypt.hash(password, 10)
             await User.create({
                 username,
                 email,
