@@ -92,7 +92,7 @@ hello = async function(url, res, id) {
             }
             
         } catch(error) {
-            res.status(401).send({message: error})
+            res.status(401).send({message: "error in adding movie"})
         }
 
     })
