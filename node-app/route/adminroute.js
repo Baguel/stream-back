@@ -14,7 +14,7 @@ router.put("/update/:id", auth, isadminAuth, updateUser)
 
 router.put("/update/film/:id", auth, isadminAuth, updatefilm)
 
-router.post("/addfilm", addmovie)
+router.post("/addfilm", auth, isadminAuth, addmovie)
 
 router.post("/addfilm/v2/:id", auth, isadminAuth, addfilmTmdb)
 
