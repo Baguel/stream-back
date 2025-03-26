@@ -12,6 +12,7 @@ const axios = require('axios');
 
 const corsOpts = {
     'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Credentials': true,
     methods: [
       'GET',
       'POST',
