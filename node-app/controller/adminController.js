@@ -30,7 +30,7 @@ exports.getUser = async (req,res) => {
 }
 
 exports.getallUser = async (req,res) => {
-    const user = await User.find({name: {$ne: "admin"}})
+    const user = await User.find({username: {$ne: "admin"}})
     if (user) {
         res.send({message: user})
     } else {
