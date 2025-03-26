@@ -32,30 +32,6 @@ const MovieSchema = new mongoose.Schema({
     companies: {
         type: [],
     },
-    favorite: {
-        note: {
-            rate: [{
-                rates: {
-                    type: Number,
-                },
-                user: {
-                    type: Schema.Types.ObjectId,
-                    ref: 'User',
-                    unique: true,
-                }
-            }]
-        },
-    },
-    // rate: [{
-    //     rates: {
-    //         type: Number,
-    //     },
-    //     user: {
-    //         type: Schema.Types.ObjectId,
-    //         ref: 'User',
-    //         unique: true,
-    //     }
-    // }]
 })
 
 module.exports=mongoose.model('Movie', MovieSchema);
