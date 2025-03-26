@@ -7,11 +7,11 @@ const jwt = require('jsonwebtoken');
 router.post('/register', async (req, res) => {
     const { username, email, password } = req.body;
     try {
-        const userfind = await User.find({$or: [{username: username}, {email: email}]})
+        const userfind = await User.find({email: email})
         if (userfind.length != 0) {
             res.status(401).send({message: "User already exits this email or username"})
         } else {
-            const hashed = bcrypt.hash(password, 10)
+            const hashed = await bcrypt.hash(password, 10)
             await User.create({
                 username,
                 email,

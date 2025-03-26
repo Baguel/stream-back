@@ -16,13 +16,13 @@ const userSchema = new mongoose.Schema({
         type: Number,
         default: 0,
     },
-    favorite: [
-        {
+    favorite: {
+        type: [{
             type: Schema.Types.ObjectId,
-            ref: 'Movie',
-            unique: true,
-        }
-    ],
+            ref: 'Movie'
+          }],
+          default: []
+    },
     password: {
         require: true,
         type: String, 
