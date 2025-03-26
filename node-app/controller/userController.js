@@ -176,13 +176,13 @@ exports.ratefilm = async (req,res) => {
             res.status(401).send({message: "film already in favorite"})
         } else {
             try {
-                const data = film.rate.find(({user}) => user.toString() === req.user[0]._id.toString())
+                const data = film.note.rate.find(({user}) => user.toString() === req.user[0]._id.toString())
                 if(data) {
-                    film.rate.push({rates: rate})
+                    film.note.rate.push({rates: rate})
                     await film.save();
                     res.status(200).send({message: "rate update"})
                 } else {
-                    film.rate.push({ rates: rate, user: req.user[0]._id });
+                    film.note.rate.push({ rates: rate, user: req.user[0]._id });
                     await film.save();
                     res.status(200).send({message: "rate add"})
                 }
